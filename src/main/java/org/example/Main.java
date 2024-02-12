@@ -10,7 +10,7 @@ public class Main {
         //LocalDate fecha=LocalDate.
         String nombresCliente;
 
-        String nombreempleado;
+        String nombreEmpleado;
         String contrasenaEmpleado;
         String nombreEmpleadoBD="andres1234";
         String contrasenaEmpleadoBD="admin123";
@@ -25,12 +25,12 @@ public class Main {
 
         while (!loginExitoso) {
             System.out.println("Digite su usuario: ");
-            nombreempleado=lea.nextLine();
+            nombreEmpleado=lea.nextLine();
             System.out.println("Digite su contraseña: ");
             contrasenaEmpleado=lea.nextLine();
 
             //login
-            if (nombreempleado.equals(nombreEmpleadoBD) && contrasenaEmpleado.equals(contrasenaEmpleadoBD)){
+            if (nombreEmpleado.equals(nombreEmpleadoBD) && contrasenaEmpleado.equals(contrasenaEmpleadoBD)){
                 System.out.println("Cargando sistema...");
                 loginExitoso= true;
             }else {
@@ -68,34 +68,54 @@ public class Main {
                         productoSeleccionado=lea.nextInt();
                         switch (productoSeleccionado){
                             case 1:
+                                System.out.println("Digita cuantos pandebonos tradicionales desea: ");
+                                cantidadTradicional=lea.nextInt();
                                 break;
                             case 2:
+                                System.out.println("Digita cuantos pandebonos de Guayaba desea: ");
+                                cantidadGuayaba=lea.nextInt();
                                 break;
                             case 3:
+                                System.out.println("Digita cuantos pandebonos de Arequipe desea: ");
+                                cantidadArequipe=lea.nextInt();
                                 break;
                             case 4:
+                                System.out.println("Digita cuantos pandebonos de 7 Quesos desea: ");
+                                cantidadQueso=lea.nextInt();
                                 break;
                             case 5:
+                                System.out.println("Digita cuantas bebidas desea: ");
+                                cantidadBebidas=lea.nextInt();
                                 break;
                             case 6:
+                                System.out.println("-Orden terminada-");
                                 break;
                             default:
+                                System.out.println("_Producto no encontrado_");
                                 break;
                         }
                     }while (productoSeleccionado!=6);
                     break;
                 case 2:
+                    Integer totalSinPropina=((cantidadTradicional*8000)+(cantidadGuayaba*9500)+(cantidadArequipe*12000)+(cantidadQueso*20000)+(cantidadBebidas*9500));
+                    Double totalConPropina=((totalSinPropina)+(totalSinPropina*0.1));
+                    //Rutina para mostrar un mensaje con o sin propina
+
                     break;
                 case 3:
+                    //Volver a mostrar cada uno de los productos
+                    //En que estan asignados cada uno de los contadores
                     break;
                 case 4:
+                    System.out.println("-Compra Terminada-");
                     break;
                 default:
+                    System.out.println("*Opcion Invalida*");
                     break;
             }
 
         }while (opcion !=4);
-        
+
 
 
 
